@@ -196,7 +196,7 @@ def split_join_method():
     print(s.rsplit(" and ", 2))  # 뒤에서 2개만 분리
 
     # 줄 단위 구분 : split("\n") 과 동일
-    # \ -> 개행 무시
+    # \ -> 개행 무시ㄴ
     lines = """\
     Java Programming
     Python Programming 
