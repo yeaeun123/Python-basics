@@ -111,6 +111,25 @@ def deserialize():
     - {"name":채치수, "backno":4, "height":197, "position":센터}
 - sangbuk-players.bin -> pickle로 dump
 """
+import csv
+import pickle
+def practice():
+    players = []
+    with open("./sample/sangbuk.csv", "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        next(reader)  # Skip header row
+        for row in reader:
+            player = {
+                "name": row[0],
+                "backno": row[1],
+                "height": row[2],
+                "position": row[3]
+            }
+            players.append(player)
+
+    with open("./sample/sangbuk-players.bin", "wb") as f:
+        pickle.dump(players, f)
+    print(players)
 
 
 if __name__ == "__main__":
@@ -121,4 +140,5 @@ if __name__ == "__main__":
     # read_file_readlines()
     # copy_binary_file()
     # serialize()
-    deserialize()
+    # deserialize()
+    practice()
